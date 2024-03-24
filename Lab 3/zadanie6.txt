@@ -1,0 +1,1 @@
+Podczas obliczania rozwiązań układu równań metodą bezpośrednią, czas znalezienia odpowiedzi wynosi około pół sekundy. Dokładność wynosi 13 miejsc po przecinku. Podczas korzystania z metod iteracyjnych błąd dąży do nieskończoności, co uniemożliwia użycie ich do znalezienia odpowiedzi.
