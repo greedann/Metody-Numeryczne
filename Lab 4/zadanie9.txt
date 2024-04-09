@@ -1,0 +1,5 @@
+Funkcja fzero przesuwa się w różnych kierunkach od punktu początkowego, aż znajdzie różnicę znaków. Następnie przechodzi do etapu znajdowania punktu zerowego.
+W przypadku argumentu 6 funkcja wpada w przedział, w którym wykres przecina oś x. I znajduje miejsce, w którym to się dzieje.
+Natomiast w przypadku argumentu 4.5 funkcja wchodzi w przedział, w którym wykres ma nieciągłość, a funkcja nie przyjmuje wartości 0.
+Ale funkcja nadal próbuje znaleźć punkt zerowy. A gdy zbliża się do punktu przerwania i nie może przejść dalej, a wartość nie zbliża się do 0,
+funkcja zwraca ostrzeżenie, że ten punkt może być punktem singularnośći.
