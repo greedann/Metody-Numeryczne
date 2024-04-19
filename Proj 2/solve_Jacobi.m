@@ -1,19 +1,35 @@
 function [x,time,iterations, err] = solve_Jacobi(A,b,N,max_err_norm)
 
 x = ones(N, 1);
-D = diag(diag(A));
-M = -D\(tril(A,-1)+triu(A,1));
-bm = D\b;
+D = zeros(N, N);
+for i = 1:N
+    D(i,i) = A(i,i);
+end
+L = zeros(N, N);
+for i = 1:N
+    for j = 1:i-1
+        L(i,j) = A(i,j);
+    end
+end
+
+U = zeros(N, N);
+for i = 1:N
+    for j = i+1:N
+        U(i,j) = A(i,j);
+    end
+end
+M = -devide(D, L+U);
+bm = devide(D, b);
 max_iterations = 1000;
 iterations = 0;
 err = [];
 
 tic
 while iterations < max_iterations
-    x = M*x + bm;
+    x = mul(M,x) + bm;
     iterations = iterations + 1;
     
-    err_norm = norm(A*x-b);
+    err_norm = norm(mul(A,x)-b);
     err = [err err_norm];
     if (err_norm < max_err_norm)
         break

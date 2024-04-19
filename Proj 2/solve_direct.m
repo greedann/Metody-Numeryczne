@@ -1,10 +1,10 @@
 function [x, err_norm, time] = solve_direct(A,b,N)
 tic;
-[L, U] = lu(A);
+[L, U] = my_lu(A);
 
-y = L \ b;
-x = U \ y;
+y = devide(L,b);
+x = devide(U,y);
 
-err_norm = norm(A*x-b);
 time = toc;
+err_norm = norm(mul(A,x)-b);
 end

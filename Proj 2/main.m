@@ -54,7 +54,7 @@ hold off;
 
 
 % zadanie E
-sizes = [100,500,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000];
+sizes = [100,500,1000,2000,3000];
 
 jacobi_times = [];
 gauss_seidel_times = [];
